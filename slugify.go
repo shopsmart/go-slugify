@@ -18,7 +18,7 @@ var StripRepl = ""
 var SeparatorForRe = regexp.QuoteMeta(Separator)
 
 // StripChar removes invalid slug characters
-var StripChar = regexp.MustCompile(fmt.Sprintf("['\"]", StripRepl))
+var StripChar = regexp.MustCompile(fmt.Sprintf("[%s'\"]", StripRepl))
 
 // ReInValidChar match invalid slug string
 var ReInValidChar = regexp.MustCompile(fmt.Sprintf("[^%sa-zA-Z0-9]", Separator))
