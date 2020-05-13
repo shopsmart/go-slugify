@@ -11,6 +11,9 @@ import (
 // Separator separator between words
 var Separator = "-"
 
+// InvalidCharReplacement replaces invalid characters
+var InvalidCharReplacement = ""
+
 // SeparatorForRe for regexp
 var SeparatorForRe = regexp.QuoteMeta(Separator)
 
@@ -22,7 +25,7 @@ var ReDupSeparatorChar = regexp.MustCompile(fmt.Sprintf("%s{2,}", SeparatorForRe
 
 // Version return version
 func Version() string {
-	return "0.2.0"
+	return "0.2.1"
 }
 
 // Slugify implements make a pretty slug from the given text.
@@ -33,7 +36,7 @@ func Slugify(s string) string {
 
 func slugify(s string) string {
 	s = unidecode.Unidecode(s)
-	s = replaceInValidCharacter(s, Separator)
+	s = replaceInValidCharacter(s, InvalidCharReplacement)
 	s = removeDupSeparator(s)
 	s = strings.Trim(s, Separator)
 	s = strings.ToLower(s)
