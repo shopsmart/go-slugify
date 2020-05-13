@@ -39,7 +39,7 @@ func Slugify(s string) string {
 
 func slugify(s string) string {
 	s = unidecode.Unidecode(s)
-	s = StripChar(s, StripRepl)
+	s = stripChar(s, StripRepl)
 	s = replaceInValidCharacter(s, Separator)
 	s = removeDupSeparator(s)
 	s = strings.Trim(s, Separator)
