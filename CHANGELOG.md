@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2 (2020-05-13)
+* Add `stripChar`
+* Export `StripChar`
+* Rename `InvalidCharReplacement` to `StripRepl`
+
 ## 0.2.1 (2020-05-13)
 * Add `InvalidCharReplacement` variable
 
