@@ -11,24 +11,15 @@ import (
 // Separator separator between words
 var Separator = "-"
 
-// StripRepl replaces invalid characters
-var StripRepl = ""
-
-// SeparatorForRe for regexp
-var SeparatorForRe = regexp.QuoteMeta(Separator)
-
 // StripChar removes invalid slug characters
-var StripChar = regexp.MustCompile(fmt.Sprint("['\"]", StripRepl))
+var StripChar = regexp.MustCompile(fmt.Sprint("['\"]", ""))
 
 // ReInValidChar match invalid slug string
-var ReInValidChar = regexp.MustCompile(fmt.Sprintf("[^%sa-zA-Z0-9]", Separator))
-
-// ReDupSeparatorChar match duplicate separator string
-var ReDupSeparatorChar = regexp.MustCompile(fmt.Sprintf("%s{2,}", SeparatorForRe))
+var ReInValidChar = regexp.MustCompile(fmt.Sprint("[^a-zA-Z0-9]+"))
 
 // Version return version
 func Version() string {
-	return "0.2.2"
+	return "0.2.3"
 }
 
 // Slugify implements make a pretty slug from the given text.
@@ -39,25 +30,19 @@ func Slugify(s string) string {
 
 func slugify(s string) string {
 	s = unidecode.Unidecode(s)
-	s = stripChar(s, StripRepl)
+	s = stripChar(s)
 	s = replaceInValidCharacter(s, Separator)
-	s = removeDupSeparator(s)
 	s = strings.Trim(s, Separator)
 	s = strings.ToLower(s)
 	return s
 }
 
-func stripChar(s, repl string) string {
-	s = StripChar.ReplaceAllString(s, repl)
+func stripChar(s string) string {
+	s = StripChar.ReplaceAllString(s, "")
 	return s
 }
 
 func replaceInValidCharacter(s, repl string) string {
 	s = ReInValidChar.ReplaceAllString(s, repl)
-	return s
-}
-
-func removeDupSeparator(s string) string {
-	s = ReDupSeparatorChar.ReplaceAllString(s, Separator)
 	return s
 }

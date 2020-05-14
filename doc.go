@@ -1,6 +1,6 @@
-// Package slugify implements Make Pretty Slug
+// Package slugify implements URL Slug Pattern
 //
-// 	s := "北京kožušček,abc"
+// 	s := "Brad's Deals & Shopsmart"
 // 	fmt.Println(slugify.Slugify(s))
-// 	// Output: bei-jing-kozuscek-abc
+// 	// Output: brads-deals-shopsmart
 package slugify
