@@ -19,7 +19,7 @@ var ReInValidChar = regexp.MustCompile(fmt.Sprint("[^a-zA-Z0-9]+"))
 
 // Version return version
 func Version() string {
-	return "0.2.3"
+	return "0.2.4"
 }
 
 // Slugify implements make a pretty slug from the given text.

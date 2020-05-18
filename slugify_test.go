@@ -22,7 +22,7 @@ func check(t *testing.T, ret, expect string) {
 
 func TestVersion(t *testing.T) {
 	ret := Version()
-	expect := "0.2.3"
+	expect := "0.2.4"
 	check(t, ret, expect)
 }
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4 (2020-05-13)
+
+* Add `\`` to list of of removed characters
+* Add back `ReDupSeparatorChar` to its implementation matches `parameterize`
+
 ## 0.2.3 (2020-05-13)
 
 * Remove `ReDupSeparatorChar`
