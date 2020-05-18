@@ -12,7 +12,7 @@ import (
 var Separator = "-"
 
 // StripChar removes invalid slug characters
-var StripChar = regexp.MustCompile(fmt.Sprint("['\"]", ""))
+var StripChar = regexp.MustCompile(fmt.Sprint("['\"`]", ""))
 
 // ReInValidChar match invalid slug string
 var ReInValidChar = regexp.MustCompile(fmt.Sprint("[^a-zA-Z0-9]+"))

@@ -38,6 +38,8 @@ func TestSlugify(t *testing.T) {
 		{"Nín hǎo. Wǒ shì zhōng guó rén", "nin-hao-wo-shi-zhong-guo-ren"},
 		{`C\'est déjà l\'été.`, "c-est-deja-l-ete"},
 		{`Brad's Deals`, "brads-deals"},
+		{"Brad`s Deals", "brads-deals"},
+		{`Brad"s Deals`, "brads-deals"},
 		{"^très|Jolie-- ", "tres-jolie"},
 		{"Donald E. Knuth", "donald-e-knuth"},
 		{"Jürgen", "jurgen"},
